@@ -8,7 +8,8 @@ MarkerIcons.instance.loadIcon(assetPath, assetName)
  ```
 Popup takes a widget, recommended constraints (100,150)
 usually you want to reuse the same popup
- ```    Popup popup = Popup();
+ ```    
+        Popup popup = Popup();
         Marker(
           markerId: id,
           position: latlng,
@@ -21,16 +22,22 @@ usually you want to reuse the same popup
                          @required double popupOffset,
                          @required Widget widget,}
                        )
-        );```
+        );
+```
 
 put PopupLayer in a Stack widget on top of the map like so
-```Stack(children: <Widget>[
+```
+Stack(children: <Widget>[
                       PopupLayer(popup, mapcontroller)
                       googleMap]
-                      )```
-```GoogleMap(
+                      )
+ ```
+ put this on the google map
+```
+ GoogleMap(
               onTap: popup.tapAway(),
               onCameraMove: popup.handleCameraMove(),
-              )```
+              )
+ ```
 
 todo: example, docs, tests
